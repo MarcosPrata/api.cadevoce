@@ -1,0 +1,16 @@
+{
+    "name": "marcosprata/cadevoce_server",
+    "description": "Servidor do aplicativo cade voce",
+    "type": "project",
+    "require": {
+        "mongodb/mongodb": "^1.5"
+    },
+    "license": "proprietary",
+    "authors": [
+        {
+            "name": "MarcosPrata",
+            "email": "mhpjunior3@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable"
+}
