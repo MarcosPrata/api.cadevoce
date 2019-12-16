@@ -16,6 +16,7 @@ switch ($funcao) {
 
         $BDusuarios->alterarLocalizacao($email,$latitude,$longitude);
         $usuario = $BDusuarios->getUsuario($email);
+        error_log(json_encode($usuario->toJSON()));
         $grupos = [];
         foreach($usuario->grupos as $grupo){
             $grupo = $BDgrupos->getGrupo($grupo);
