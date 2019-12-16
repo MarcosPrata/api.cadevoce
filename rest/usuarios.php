@@ -24,7 +24,6 @@ switch ($funcao) {
                 $participantes[] = $BDusuarios->getUsuario($participante);
             }
             $grupos[] = [$grupo->nome => $participantes];
-
         }
         echo json_encode(['error'=>false, 'grupos' => $grupos]); 
     break;

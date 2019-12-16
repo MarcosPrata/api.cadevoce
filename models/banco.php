@@ -74,7 +74,7 @@ class UsuariosBD
         $banco = new MongoHelper();
         $usuarios = $banco->colecao($banco->TABELA_USUARIOS);
         return $usuarios->findOneAndUpdate(
-            ['email'=>$email],[ '$set' => [ 'localizacao' => json_encode(['lat' => $lat, 'lon' => $lon])]],[]
+            ['email'=>$email],[ '$set' => [ 'localizacao' => ['lat' => $lat, 'lon' => $lon] ]],[]
         );
     }
 }
