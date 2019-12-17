@@ -67,8 +67,7 @@ class UsuariosBD
         $banco = new MongoHelper();
         $usuarios = $banco->colecao($banco->TABELA_USUARIOS);
         $u = $usuarios->findOne(['email'=>$email]);
-        error_log(json_encode($u));
-        $usuario = new Usuario(json_decode($u));
+        $usuario = new Usuario(json_encode($u));
         return $usuario;
     }
     function alterarLocalizacao($email, $lat, $lon)
