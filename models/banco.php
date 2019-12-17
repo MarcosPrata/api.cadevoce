@@ -22,7 +22,7 @@ class Usuario
     public $grupos;
     public $localizacao;
 
-    function __construct($jsonString)
+    function __construct($json)
     {
         $this->nome = ($json['nome'] == null) ? '' : $json['nome'];
         $this->email = ($json['email'] == null) ? '' : $json['email'];
