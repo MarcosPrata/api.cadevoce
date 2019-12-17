@@ -24,6 +24,7 @@ class Usuario
 
     function __construct()
     {
+        error_log("Passou 0");
         $this->nome = "";
         $this->email = "";
         $this->grupos = [];
@@ -32,6 +33,7 @@ class Usuario
 
     function __construct1($jsonString)
     {
+        error_log("Passou 1");
         $json = json_decode($jsonString);
         $this->nome = ($json['nome'] == null) ? '' : $json['nome'];
         $this->email = ($json['email'] == null) ? '' : $json['email'];
