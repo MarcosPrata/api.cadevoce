@@ -68,7 +68,7 @@ class UsuariosBD
         $usuarios = $banco->colecao($banco->TABELA_USUARIOS);
         $u = $usuarios->findOne(['email'=>$email]);
         error_log(json_encode($u));
-        $usuario = new Usuario($u);
+        $usuario = new Usuario(json_decode($u));
         return $usuario;
     }
     function alterarLocalizacao($email, $lat, $lon)
