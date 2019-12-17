@@ -22,16 +22,7 @@ class Usuario
     public $grupos;
     public $localizacao;
 
-    function __construct()
-    {
-        error_log("Passou 0");
-        $this->nome = "";
-        $this->email = "";
-        $this->grupos = [];
-        $this->localizacao = ['lat' => '', 'lon' => ''];
-    }
-
-    function __construct1($jsonString)
+    function __construct($jsonString)
     {
         error_log("Passou 1");
         $json = json_decode($jsonString);
