@@ -77,14 +77,7 @@ class Grupo
     public $senha;
     public $usuarios;
 
-    function __construct()
-    {
-        $this->nome = "";
-        $this->senha = "";
-        $this->usuarios = [];
-    }
-
-    function __construct1(ArrayObject $json)
+    function __construct($json)
     {
         $this->nome = ($json['nome'] == null) ? '' : $json['nome'];
         $this->senha = ($json['senha'] == null) ? '' : $json['senha'];
