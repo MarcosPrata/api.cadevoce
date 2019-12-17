@@ -30,8 +30,9 @@ class Usuario
         $this->localizacao = ['lat' => '', 'lon' => ''];
     }
 
-    function __construct1(ArrayObject $json)
+    function __construct1($jsonString)
     {
+        $json = json_decode($jsonString);
         $this->nome = ($json['nome'] == null) ? '' : $json['nome'];
         $this->email = ($json['email'] == null) ? '' : $json['email'];
         $this->grupos = ($json['grupos'] == null) ? [] : $json['grupos'];
@@ -66,9 +67,7 @@ class UsuariosBD
     {
         $banco = new MongoHelper();
         $usuarios = $banco->colecao($banco->TABELA_USUARIOS);
-        $usuarioBSON = $usuarios->findOne(['email'=>$email]);
-        $usuarioJSON = $usuarioBSON->jsonSerialize();
-        $usuario = new Usuario($usuarioJSON);
+        $usuario = new Usuario(json_encode($usuarios->findOne(['email'=>$email])));
         return $usuario;
     }
     function alterarLocalizacao($email, $lat, $lon)
