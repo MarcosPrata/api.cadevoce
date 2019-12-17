@@ -21,7 +21,11 @@ switch ($funcao) {
             $grupo = $BDgrupos->getGrupo($grupo);
             $participantes = [];
             foreach($grupo->usuarios as $participante){
-                $participantes[] = $BDusuarios->getUsuario($participante);
+                $u = $BDusuarios->getUsuario($participante);
+                $participantes[] = [
+                    'nome'=>$u['nome'],
+                    'localizacao'=>$u['localizacao']
+                ];
             }
             $grupos[] = [$grupo->nome => $participantes];
         }
