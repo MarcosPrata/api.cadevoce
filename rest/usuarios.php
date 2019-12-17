@@ -24,7 +24,8 @@ switch ($funcao) {
                 $u = $BDusuarios->getUsuario($participante);
                 $participantes[] = [
                     'nome'=>$u->nome,
-                    'localizacao'=>$u->localizacao
+                    'localizacao'=>$u->localizacao,
+                    'email'=>$u->email
                 ];
             }
             $grupos[] = [$grupo->nome => $participantes];
